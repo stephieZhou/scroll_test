@@ -1,8 +1,19 @@
-.App {
+.item {
   text-align: center;
-  border: "1px solid green";
-  margin: 12;
-  padding:8;
+  border: 1px solid green;
+  margin: auto;
+  padding: 8px 0 8px;
+  width: 50%;
+}
+
+p {
+  text-align: center;
+  padding: 8px 0 8px;
+}
+
+h3 {
+  text-align: center;
+  padding: 8px 0 8px;
 }
 
 
