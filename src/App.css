@@ -1,19 +1,28 @@
 .item {
   text-align: center;
-  border: 1px solid green;
   margin: auto;
   padding: 8px 0 8px;
-  width: 50%;
+  width: 80%;
+  font-family: "Jersey 15", sans-serif;
+  font-size: 10vh;
+  color: rgba(41, 13, 67, 0.877);
 }
 
 p {
   text-align: center;
   padding: 8px 0 8px;
+  font-family: "Jersey 15", sans-serif;
+  font-size: 5vh;
 }
 
-h3 {
+h2 {
   text-align: center;
   padding: 8px 0 8px;
+  font-family: "Pixelify Sans", sans-serif;
+  color:#f12cc7c7;
+  font-size: 5vh;
 }
 
-
+body {
+  background: linear-gradient(#b430f133, #e591d367);
+}

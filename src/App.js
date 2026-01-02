@@ -18,18 +18,18 @@ function App() {
   }
   return (
     <div className="App">
-    <h3>Title: <b>Infinite Scroll</b></h3>
+    <h2>Wait! I think you forgot something.</h2>
     <div id ="parentScrollDiv" style={{height:500, overflow:'auto'}}>
     <InfiniteScroll 
       dataLength={dataSource.length} 
       next={fetchMoreData} 
       hasMore={hasMore}
       loader={<p>Loading...</p>}
-      endMessage={<p>All Done!</p>}
+      endMessage={<p>All Ready to Go!</p>}
       scrollableTarget="parentScrollDiv"
       >
       {dataSource.map((item, index)=> {
-        return <div className="item">This is a div #{index + 1} inside InfiniteScroll </div>
+        return <div className="item"> [ ] Did you forget your {index + 1}? </div>
       })}
     </InfiniteScroll>
     </div>
