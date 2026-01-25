@@ -37,6 +37,7 @@ function App() {
     }
     
   }
+  
   return (
     <div className="App">
     <h2>Wait! I think you forgot something.</h2>
@@ -52,7 +53,11 @@ function App() {
       >
       {dataSource.map((item, index)=> {
         return <FadeInSection>
-          <div className="item"> 
+          <div className="item">
+            <label className="cont">
+              <input type="checkbox"></input>
+              <span className = "check"></span>
+            </label>
             <h2>Did you forget your {index + 1}?</h2>
           </div>
           </FadeInSection>

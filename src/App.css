@@ -25,7 +25,10 @@ div::-webkit-scrollbar {
 }
 
 
-
+.item {
+  display: flex;
+  align-items: center;
+}
 .item h2{
   text-align: center;
   margin: auto;
@@ -35,7 +38,6 @@ div::-webkit-scrollbar {
   font-size: 10vh;
   color: rgba(41, 13, 67, 0.877);
 }
-
 
 
 p {
@@ -53,3 +55,49 @@ h2 {
   font-size: 5vh;
 }
 
+.cont input {
+  position: absolute;
+  opacity: 0;
+  cursor:pointer;
+  height: 10vh;
+  width: 10vh;
+}
+.check {
+  position: absolute;
+  width:10vh;
+  height:10vh;
+  margin-right:-12vh;
+  margin-left: 4vh;
+  border: 5px solid rgba(41, 13, 67, 0.877);
+  border-radius: 5px;
+}
+
+.cont:hover input ~ .check {
+  background-color: rgba(41, 13, 67, 0.336);
+}
+
+.cont input:checked ~ .check {
+  background-color: rgba(41, 13, 67, 0.877);
+}
+
+.check:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.cont input:checked ~ .check:after {
+  display:block
+}
+
+.cont .check:after {
+  left: 20px;
+  top: 5px;
+  width: 3vh;
+  height: 6vh;
+  border: 20px solid white;
+  border-width: 0 8px 8px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
