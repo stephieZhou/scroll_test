@@ -1,6 +1,28 @@
 import './App.css';
+import React from 'react';
 import InfiniteScroll from "react-infinite-scroll-component"
 import { useState } from "react";
+
+function FadeInSection(props) {
+  const [isVisible, setVisible] = React.useState(false);
+  const domRef = React.useRef();
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => setVisible(entry.isIntersecting));
+    });
+    observer.observe(domRef.current);
+  }, []);
+  return (
+    <div
+      className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
+      ref={domRef}
+      style={{overflow:'hidden'}}
+    >
+      {props.children}
+    </div>
+  );
+}
+
 
 function App() {
   const [dataSource, setDataSource] = useState(Array.from({length:20}))
@@ -19,7 +41,8 @@ function App() {
   return (
     <div className="App">
     <h2>Wait! I think you forgot something.</h2>
-    <div id ="parentScrollDiv" style={{height:500, overflow:'auto'}}>
+    <div id ="parentScrollDiv"style={
+      {flex:1}}>
     <InfiniteScroll 
       dataLength={dataSource.length} 
       next={fetchMoreData} 
@@ -29,7 +52,12 @@ function App() {
       scrollableTarget="parentScrollDiv"
       >
       {dataSource.map((item, index)=> {
-        return <div className="item"> [ ] Did you forget your {index + 1}? </div>
+        return <FadeInSection>
+          <div className="item"> 
+            <h2>[ ] Did you forget your {index + 1}?</h2>
+            </div>
+          </FadeInSection>
+        
       })}
     </InfiniteScroll>
     </div>
