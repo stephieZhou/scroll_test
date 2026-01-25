@@ -1,6 +1,5 @@
 body {
   background: linear-gradient(#b430f133, #e591d367);
-  overflow-y:auto;
 }
 
 body::-webkit-scrollbar {
@@ -18,13 +17,11 @@ div::-webkit-scrollbar {
   transition: opacity 1200ms ease-out, transform 600ms ease-out,
     visibility 1200ms ease-out;
   will-change: opacity, transform, visibility;
-  overflow-y: hidden;
 }
 .fade-in-section.is-visible {
   opacity: 1;
   transform: none;
   visibility: visible;
-  overflow-y: hidden;
 }
 
 

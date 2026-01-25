@@ -16,7 +16,6 @@ function FadeInSection(props) {
     <div
       className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
       ref={domRef}
-      style={{overflow:'hidden'}}
     >
       {props.children}
     </div>
@@ -25,13 +24,13 @@ function FadeInSection(props) {
 
 
 function App() {
-  const [dataSource, setDataSource] = useState(Array.from({length:20}))
+  const [dataSource, setDataSource] = useState(Array.from({length:40}))
   const [hasMore,setHasMore] = useState(true)
   const fetchMoreData=()=> {
     if(dataSource.length < 40) {
       //MAKING API CALL
       setTimeout(() => {
-        setDataSource(dataSource.concat(Array.from({length:20})))
+        setDataSource(dataSource.concat(Array.from({length:40})))
       }, 500)
     } else {
       setHasMore(false)
@@ -54,10 +53,9 @@ function App() {
       {dataSource.map((item, index)=> {
         return <FadeInSection>
           <div className="item"> 
-            <h2>[ ] Did you forget your {index + 1}?</h2>
-            </div>
+            <h2>Did you forget your {index + 1}?</h2>
+          </div>
           </FadeInSection>
-        
       })}
     </InfiniteScroll>
     </div>
@@ -66,3 +64,5 @@ function App() {
 }
 
 export default App;
+
+
