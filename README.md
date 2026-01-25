@@ -5,4 +5,5 @@ Stuff to do
 3) add sound on check + other sound 
 4) optimization (rd 1)
     i) Fix checkbox glitching
-5) deploy!
+5) Create actual README and description
+6) deploy!
